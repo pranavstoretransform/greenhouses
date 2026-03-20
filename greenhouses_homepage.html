@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greenhouses Etc. | Greenhouse Kits & Pool Enclosures</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-dark: #1B4D2E;
+    --green-mid: #2E7D4F;
+    --green-bright: #7dbf1c;
+    --green-light: #EAF4EE;
+    --green-pale: #F4FAF6;
+    --slate: #3D5A72;
+    --slate-light: #E8EFF5;
+    --cream: #FAF8F3;
+    --warm-white: #FFFEF9;
+    --text-dark: #1A2A1F;
+    --text-mid: #3B4D40;
+    --text-muted: #6B7E71;
+    --accent-gold: #C9922A;
+    --border: rgba(30,77,46,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ===================== NAVBAR ===================== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,254,249,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    transition: box-shadow 0.3s;
+  }
+
+  nav.scrolled { box-shadow: 0 4px 32px rgba(27,77,46,0.10); }
+
+  .nav-logo img {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+  }
+
+  .nav-links > li { position: relative; }
+
+  .nav-links > li > a {
+    display: block;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-mid);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    border-radius: 8px;
+    transition: color 0.2s, background 0.2s;
+  }
+
+  .nav-links > li > a:hover { color: var(--green-dark); background: var(--green-pale); }
+
+  .dropdown-arrow {
+    font-size: 10px;
+    margin-left: 4px;
+    opacity: 0.5;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  .nav-links > li:hover .dropdown-arrow { transform: rotate(180deg); }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 200px;
+    box-shadow: 0 16px 48px rgba(27,77,46,0.12);
+    z-index: 200;
+  }
+
+  .nav-links > li:hover .dropdown { display: block; }
+
+  .dropdown a {
+    display: block;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    color: var(--text-mid);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.15s, color 0.15s;
+    font-weight: 400;
+  }
+
+  .dropdown a:hover { background: var(--green-light); color: var(--green-dark); }
+
+  .nav-cta {
+    background: var(--green-dark);
+    color: #fff !important;
+    padding: 10px 22px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 13.5px !important;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--green-mid) !important; transform: translateY(-1px); }
+
+  .nav-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-dark);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1.5px solid var(--green-dark);
+    border-radius: 50px;
+    transition: all 0.2s;
+    margin-right: 10px;
+  }
+
+  .nav-phone:hover { background: var(--green-dark); color: #fff; }
+
+  /* ===================== HERO ===================== */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+
+  .hero-bg-texture {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(125,191,28,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(27,77,46,0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-light);
+    border: 1px solid rgba(125,191,28,0.3);
+    border-radius: 50px;
+    padding: 6px 16px 6px 10px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--green-dark);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    width: fit-content;
+  }
+
+  .hero-badge-dot {
+    width: 8px; height: 8px;
+    background: var(--green-bright);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--green-dark);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-title span {
+    color: var(--green-bright);
+    position: relative;
+  }
+
+  .hero-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0; right: 0;
+    height: 4px;
+    background: var(--green-bright);
+    opacity: 0.25;
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    max-width: 480px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green-dark);
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: all 0.25s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,77,46,0.25); }
+
+  .btn-primary svg { transition: transform 0.2s; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--green-dark);
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid var(--green-dark);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--green-pale); }
+
+  .hero-stats {
+    display: flex;
+    gap: 36px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-item {}
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 48px;
+    overflow: hidden;
+  }
+
+  .hero-image-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--green-light) 0%, var(--slate-light) 100%);
+  }
+
+  .hero-image-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .hero-img-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(27,77,46,0.12);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-img-card:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16/9;
+  }
+
+  .hero-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 20px;
+  }
+
+  .hero-img-label {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    background: rgba(27,77,46,0.88);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 50px;
+    letter-spacing: 0.03em;
+    backdrop-filter: blur(4px);
+  }
+
+  .floating-badge {
+    position: absolute;
+    top: 40px;
+    right: 16px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 14px 20px;
+    box-shadow: 0 8px 32px rgba(27,77,46,0.15);
+    z-index: 10;
+    text-align: center;
+  }
+
+  .floating-badge .big { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green-dark); line-height: 1; }
+  .floating-badge .small { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-top: 3px; }
+
+  .bbb-badge-float {
+    position: absolute;
+    bottom: 40px;
+    right: 16px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 32px rgba(27,77,46,0.15);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bbb-icon {
+    width: 40px; height: 40px;
+    background: #003F87;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+
+  .bbb-text .line1 { font-size: 11px; font-weight: 700; color: var(--text-dark); }
+  .bbb-text .line2 { font-size: 10px; color: var(--text-muted); }
+
+  /* ===================== CATEGORIES ===================== */
+  .section { padding: 96px 80px; }
+  .section-alt { background: var(--cream); }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green-bright);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 52px;
+    gap: 32px;
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .cat-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    group: true;
+  }
+
+  .cat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 64px rgba(27,77,46,0.14);
+    border-color: rgba(125,191,28,0.4);
+  }
+
+  .cat-card-img {
+    height: 180px;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .cat-card-img .cat-icon {
+    font-size: 72px;
+    opacity: 0.3;
+  }
+
+  .cat-card-img-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cat-card-img-bg svg { width: 100%; height: 100%; }
+
+  .cat-card-body {
+    padding: 24px 28px;
+  }
+
+  .cat-card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .cat-card-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .cat-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-mid);
+    letter-spacing: 0.01em;
+    transition: gap 0.2s;
+  }
+
+  .cat-card:hover .cat-card-link { gap: 10px; }
+
+  /* ===================== FEATURED PRODUCTS ===================== */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .product-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 56px rgba(27,77,46,0.13);
+    border-color: rgba(125,191,28,0.35);
+  }
+
+  .product-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--green-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .product-img img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: transform 0.4s;
+  }
+
+  .product-card:hover .product-img img { transform: scale(1.06); }
+
+  .product-series-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--green-dark);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 50px;
+  }
+
+  .product-body {
+    padding: 20px 22px 22px;
+  }
+
+  .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .product-sku {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    margin-top: 4px;
+  }
+
+  .product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-dark);
+  }
+
+  .add-to-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px; height: 38px;
+    background: var(--green-dark);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #fff;
+  }
+
+  .add-to-cart:hover { background: var(--green-bright); transform: scale(1.1); }
+
+  /* ===================== ABOUT / CTA SPLIT ===================== */
+  .about-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    background: var(--green-dark);
+    border-radius: 32px;
+    overflow: hidden;
+    margin: 0 80px;
+  }
+
+  .about-left {
+    padding: 72px 64px;
+    color: #fff;
+  }
+
+  .about-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green-bright);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+
+  .about-body {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .about-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+  }
+
+  .feature-dot {
+    width: 6px; height: 6px;
+    background: var(--green-bright);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green-bright);
+    color: var(--green-dark);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.01em;
+  }
+
+  .about-btn:hover { background: #8fcf22; transform: translateY(-2px); }
+
+  .about-right {
+    background: rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 56px;
+    gap: 20px;
+    border-left: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .about-stat {
+    padding: 24px 28px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.2s;
+  }
+
+  .about-stat:hover { background: rgba(255,255,255,0.11); }
+
+  .about-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--green-bright);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .about-stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    font-weight: 400;
+  }
+
+  /* ===================== TESTIMONIALS ===================== */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .testimonial-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 36px 32px;
+    position: relative;
+    transition: all 0.25s;
+  }
+
+  .testimonial-card:hover {
+    box-shadow: 0 16px 48px rgba(27,77,46,0.10);
+    transform: translateY(-4px);
+    border-color: rgba(125,191,28,0.3);
+  }
+
+  .testimonial-card.featured {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    line-height: 0.7;
+    color: var(--green-bright);
+    margin-bottom: 16px;
+    display: block;
+    opacity: 0.6;
+  }
+
+  .testimonial-card.featured .quote-mark { opacity: 0.8; }
+
+  .testimonial-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 24px;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .testimonial-card.featured .testimonial-text { color: rgba(255,255,255,0.8); }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+
+  .testimonial-card.featured .testimonial-author { border-top-color: rgba(255,255,255,0.12); }
+
+  .author-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--green-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--green-dark);
+    flex-shrink: 0;
+  }
+
+  .testimonial-card.featured .author-avatar { background: rgba(255,255,255,0.15); color: #fff; }
+
+  .author-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .testimonial-card.featured .author-name { color: #fff; }
+
+  .author-loc {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .testimonial-card.featured .author-loc { color: rgba(255,255,255,0.5); }
+
+  .stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+
+  .star {
+    width: 14px; height: 14px;
+    background: var(--accent-gold);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+
+  /* ===================== FINANCING STRIP ===================== */
+  .financing-strip {
+    margin: 0 80px;
+    background: var(--slate-light);
+    border: 1px solid rgba(61,90,114,0.15);
+    border-radius: 24px;
+    padding: 48px 64px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .financing-left {}
+  .financing-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--slate);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .financing-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .financing-body {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .financing-features {
+    display: flex;
+    gap: 24px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .fin-feat {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+  }
+
+  .fin-check {
+    width: 18px; height: 18px;
+    background: var(--green-bright);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fin-check svg { width: 10px; height: 10px; }
+
+  .financing-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .crest-partner {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .btn-slate {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--slate);
+    color: #fff;
+    padding: 15px 32px;
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-slate:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+  /* ===================== CONTACT STRIP ===================== */
+  .contact-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 80px;
+    background: var(--green-light);
+    border-top: 1px solid rgba(125,191,28,0.2);
+    border-bottom: 1px solid rgba(125,191,28,0.2);
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contact-strip-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: var(--green-dark);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg { color: #fff; }
+
+  .contact-detail-label { font-size: 11px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+  .contact-detail-val { font-size: 16px; font-weight: 700; color: var(--green-dark); text-decoration: none; }
+  .contact-detail-val:hover { color: var(--green-bright); }
+
+  .contact-divider { width: 1px; height: 40px; background: rgba(27,77,46,0.15); }
+
+  /* ===================== FOOTER ===================== */
+  footer {
+    background: var(--green-dark);
+    color: rgba(255,255,255,0.75);
+    padding: 64px 80px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+
+  .footer-brand {}
+  .footer-logo { margin-bottom: 16px;  height: 38px; }
+
+  .footer-tagline {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  .footer-socials { display: flex; gap: 12px; }
+
+  .social-btn {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+
+  .social-btn:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.3); }
+
+  .footer-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.15s; }
+  .footer-links a:hover { color: var(--green-bright); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; }
+  .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+  /* ===================== SCROLL ANIMATIONS ===================== */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1100px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 64px 48px 48px; }
+    .hero-right { display: none; }
+    .about-split { grid-template-columns: 1fr; margin: 0 32px; }
+    .about-right { display: none; }
+    .financing-strip { margin: 0 32px; }
+    .section { padding: 72px 48px; }
+    .contact-strip { padding: 40px 48px; }
+    footer { padding: 48px 48px 32px; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .hero-left { padding: 48px 24px 40px; }
+    .category-grid, .products-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .section { padding: 56px 24px; }
+    .about-split { margin: 0 24px; }
+    .about-left { padding: 48px 32px; }
+    .financing-strip { margin: 0 24px; padding: 36px 32px; grid-template-columns: 1fr; }
+    .financing-right { align-items: flex-start; }
+    .contact-strip { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+    footer { padding: 40px 24px 28px; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+  /* ------------- */
+  #financing{
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  /* hero right */
+  .hero-right {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 40px 40px 40px 40px;
+  background: var(--green-pale);
+  border-left: 1px solid var(--border);
+}
+
+.hero-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  flex: 1;
+}
+
+.showcase-main {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 0;
+  background: #d4eadb;
+  height: 500px;
+}
+
+.showcase-main img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.showcase-main:hover img { transform: scale(1.03); }
+
+.showcase-ribbon {
+  position: absolute;
+  top: 20px;
+  left: -2px;
+  background: var(--green-dark);
+  color: #fff;
+  padding: 10px 20px 10px 18px;
+  border-radius: 0 50px 50px 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.ribbon-from {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.7;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.ribbon-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.showcase-main-label {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.92);
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--border);
+}
+
+.showcase-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+.showcase-small {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #d4eadb;
+  height: 100%;
+}
+
+.showcase-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.showcase-small:hover img { transform: scale(1.05); }
+
+.showcase-small-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: var(--green-dark);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.03em;
+}
+
+.showcase-statbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--green-dark);
+  border-radius: 16px;
+  padding: 18px 28px;
+  flex-shrink: 0;
+}
+
+.showcase-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.ss-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--green-bright);
+  line-height: 1;
+}
+
+.ss-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.showcase-stat-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.12);
+}
+
+.showcase-bbb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.bbb-pill {
+  background: #fff;
+  color: #003F87;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: 0.04em;
+}
+/* testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px 36px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 16px 48px rgba(27,77,46,0.10);
+  transform: translateY(-4px);
+  border-color: rgba(125,191,28,0.3);
+}
+
+.testimonial-card.featured {
+  background: var(--green-dark);
+  border-color: var(--green-dark);
+  grid-row: unset;
+  grid-column: unset;
+}
+
+.quote-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  line-height: 0.7;
+  color: var(--green-bright);
+  margin-bottom: 16px;
+  display: block;
+  opacity: 0.6;
+}
+
+.testimonial-card.featured .quote-mark { opacity: 0.8; }
+
+.testimonial-text {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--text-mid);
+  font-weight: 300;
+  flex: 1;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.testimonial-card.featured .testimonial-text { color: rgba(255,255,255,0.8); }
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+
+.testimonial-card.featured .testimonial-author { border-top-color: rgba(255,255,255,0.12); }
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--green-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--green-dark);
+  flex-shrink: 0;
+}
+
+.testimonial-card.featured .author-avatar { background: rgba(255,255,255,0.15); color: #fff; }
+
+.author-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.testimonial-card.featured .author-name { color: #fff; }
+
+.author-loc {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.testimonial-card.featured .author-loc { color: rgba(255,255,255,0.5); }
+
+</style>
+</head>
+<body>
+
+<!-- =================== NAVBAR =================== -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="logo-bg.png" alt="Greenhouses Etc." onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-family:Playfair Display,serif;font-size:20px;font-weight:700;color:#1B4D2E\'>🌿 Greenhouses Etc.</span>'">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li>
+      <a href="#shop">Shop <span class="dropdown-arrow">▾</span></a>
+      <div class="dropdown">
+        <a href="#">Greenhouses</a>
+        <a href="#">Conservatories</a>
+        <a href="#">Pool Enclosures</a>
+        <a href="#">Sunrooms</a>
+        <a href="#">Skylights</a>
+        <a href="#">Accessories</a>
+        <a href="#">Grow Lights</a>
+      </div>
+    </li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#financing">Financing</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Policies</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:0">
+    <a href="tel:8882448009" class="nav-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      888-244-8009
+    </a>
+    <ul class="nav-links" style="margin-left:8px;">
+      <li><a href="#" class="nav-cta">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- =================== HERO =================== -->
+<section class="hero">
+  <div class="hero-bg-texture"></div>
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Family Owned &amp; Operated Since 2004
+    </div>
+    <h1 class="hero-title">
+      Grow Something<br>
+      <span>Beautiful</span><br>
+      This Season
+    </h1>
+    <p class="hero-sub">
+      Premium greenhouse kits, conservatories, pool enclosures and sunrooms — custom-built with honesty, integrity, and nearly two decades of expertise. Nationwide service, personal touch.
+    </p>
+    <div class="hero-actions">
+      <a href="#shop" class="btn-primary">
+        Shop Greenhouses
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#about" class="btn-secondary">Our Story</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">35+</div>
+        <div class="stat-label">Products</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">BBB</div>
+        <div class="stat-label">Accredited Business</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+  <div class="hero-showcase">
+
+    <div class="showcase-main">
+      <img src="https://greenhousesetc.com/wp-content/uploads/2017/06/24.jpg" alt="Greenhouse" onerror="this.parentElement.style.background='#d4eadb'">
+      <div class="showcase-ribbon">
+        <span class="ribbon-from">Starting from</span>
+        <span class="ribbon-price">$479</span>
+      </div>
+      <div class="showcase-main-label">Greenhouse Kits</div>
+    </div>
+
+    <div class="showcase-row">
+      <div class="showcase-small">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/08/poolenc.jpg" alt="Pool Enclosure" onerror="this.parentElement.style.background='#d4eadb'">
+        <div class="showcase-small-label">Pool Enclosures</div>
+      </div>
+      <div class="showcase-small">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/08/image1-1.jpg" alt="Sunroom" onerror="this.parentElement.style.background='#d4eadb'">
+        <div class="showcase-small-label">Sunrooms</div>
+      </div>
+    </div>
+
+    <!-- <div class="showcase-statbar">
+      <div class="showcase-stat">
+        <span class="ss-num">20+</span>
+        <span class="ss-label">Years experience</span>
+      </div>
+      <div class="showcase-stat-divider"></div>
+      <div class="showcase-stat">
+        <span class="ss-num">35+</span>
+        <span class="ss-label">Products</span>
+      </div>
+      <div class="showcase-stat-divider"></div>
+      <div class="showcase-bbb">
+        <div class="bbb-pill">BBB</div>
+        <span class="ss-label">Accredited Business</span>
+      </div>
+    </div> -->
+
+  </div>
+</div>
+</section>
+
+<!-- =================== CATEGORIES =================== -->
+<section class="section" id="shop">
+  <div class="section-header">
+    <div class="reveal">
+      <div class="section-eyebrow">Browse by Category</div>
+      <h2 class="section-title">Everything You Need<br>to Grow & Thrive</h2>
+    </div>
+    <a href="#" class="btn-secondary reveal" style="white-space:nowrap;flex-shrink:0">View All Products</a>
+  </div>
+  <div class="category-grid">
+    <a href="#" class="cat-card reveal reveal-delay-1">
+      <div class="cat-card-img">
+        <div class="cat-card-img-bg">
+          <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#EAF4EE"/>
+            <rect x="80" y="90" width="240" height="90" rx="4" fill="#2E7D4F" opacity="0.15"/>
+            <path d="M80 90 L200 30 L320 90" stroke="#2E7D4F" stroke-width="3" fill="none" opacity="0.4"/>
+            <rect x="100" y="100" width="60" height="80" rx="3" fill="#2E7D4F" opacity="0.2"/>
+            <rect x="170" y="100" width="60" height="80" rx="3" fill="#2E7D4F" opacity="0.2"/>
+            <rect x="240" y="100" width="60" height="80" rx="3" fill="#2E7D4F" opacity="0.2"/>
+            <circle cx="200" cy="130" r="22" fill="#7dbf1c" opacity="0.35"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-name">Greenhouses</div>
+        <div class="cat-card-desc">From compact 6×4 hobby kits to professional 8×20 grow operations. Hybrid, Mythos, Balance, Bella, Glory &amp; more.</div>
+        <span class="cat-card-link">Shop Greenhouses <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+    <a href="#" class="cat-card reveal reveal-delay-2">
+      <div class="cat-card-img" style="background:#E8EFF5;">
+        <div class="cat-card-img-bg">
+          <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#E8EFF5"/>
+            <path d="M60 170 Q60 60 200 50 Q340 60 340 170" stroke="#3D5A72" stroke-width="3" fill="none" opacity="0.3"/>
+            <rect x="80" y="120" width="240" height="50" rx="4" fill="#3D5A72" opacity="0.12"/>
+            <rect x="140" y="100" width="50" height="70" rx="3" fill="#3D5A72" opacity="0.18"/>
+            <rect x="210" y="100" width="50" height="70" rx="3" fill="#3D5A72" opacity="0.18"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-name">Conservatories</div>
+        <div class="cat-card-desc">Custom-designed Victorian conservatory rooms in painted aluminium or beautiful wood interiors.</div>
+        <span class="cat-card-link">Explore Conservatories <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+    <a href="#" class="cat-card reveal reveal-delay-3">
+      <div class="cat-card-img" style="background:#EAF4EE;">
+        <div class="cat-card-img-bg">
+          <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#F4FAF6"/>
+            <rect x="60" y="60" width="280" height="120" rx="8" stroke="#1B4D2E" stroke-width="2" fill="none" opacity="0.2"/>
+            <rect x="60" y="155" width="280" height="25" rx="4" fill="#1B4D2E" opacity="0.1"/>
+            <ellipse cx="200" cy="110" rx="60" ry="40" fill="#7dbf1c" opacity="0.2"/>
+            <path d="M100 130 Q150 80 200 100 Q250 120 300 90" stroke="#2E7D4F" stroke-width="2" fill="none" opacity="0.4"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-name">Pool Enclosures</div>
+        <div class="cat-card-desc">Custom pool enclosures and spa structures. Year-round enjoyment, designed to your exact specifications.</div>
+        <span class="cat-card-link">View Pool Enclosures <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+    <a href="#" class="cat-card reveal reveal-delay-4">
+      <div class="cat-card-img" style="background:#FEF9EF;">
+        <div class="cat-card-img-bg">
+          <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#FEF9EF"/>
+            <rect x="60" y="70" width="280" height="110" rx="6" fill="#C9922A" opacity="0.12"/>
+            <rect x="60" y="70" width="280" height="20" rx="4" fill="#C9922A" opacity="0.2"/>
+            <rect x="100" y="100" width="40" height="80" rx="3" fill="#C9922A" opacity="0.15"/>
+            <rect x="180" y="100" width="40" height="80" rx="3" fill="#C9922A" opacity="0.15"/>
+            <rect x="260" y="100" width="40" height="80" rx="3" fill="#C9922A" opacity="0.15"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-name">Sunrooms</div>
+        <div class="cat-card-desc">Full-view swing doors, sliding patios, folding glass walls. Bronze, white, green, almond or custom colour.</div>
+        <span class="cat-card-link">See Sunrooms <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+    <a href="#" class="cat-card reveal reveal-delay-5">
+      <div class="cat-card-img" style="background:#EEF2F8;">
+        <div class="cat-card-img-bg">
+          <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#EEF2F8"/>
+            <rect x="100" y="80" width="200" height="90" rx="6" fill="#3D5A72" opacity="0.12"/>
+            <path d="M100 80 L200 40 L300 80" stroke="#3D5A72" stroke-width="2" fill="#3D5A72" fill-opacity="0.08"/>
+            <circle cx="200" cy="65" r="15" fill="#7dbf1c" opacity="0.5"/>
+            <line x1="200" y1="50" x2="200" y2="35" stroke="#C9922A" stroke-width="2.5"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-name">Skylights</div>
+        <div class="cat-card-desc">Bring natural light into any space with our quality skylight range, professionally installed.</div>
+        <span class="cat-card-link">Browse Skylights <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+    <a href="#" class="cat-card reveal reveal-delay-1">
+      <div class="cat-card-img" style="background:#F5F0EA;">
+        <div class="cat-card-img-bg">
+          <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#F5F0EA"/>
+            <rect x="80" y="80" width="70" height="90" rx="8" fill="#7dbf1c" opacity="0.25"/>
+            <rect x="165" y="100" width="70" height="70" rx="8" fill="#2E7D4F" opacity="0.2"/>
+            <rect x="250" y="90" width="70" height="80" rx="8" fill="#C9922A" opacity="0.2"/>
+            <circle cx="115" cy="65" r="12" fill="#7dbf1c" opacity="0.4"/>
+            <circle cx="200" cy="80" r="10" fill="#2E7D4F" opacity="0.3"/>
+          </svg>
+        </div>
+      </div>
+      <div class="cat-card-body">
+        <div class="cat-card-name">Accessories &amp; Grow Lights</div>
+        <div class="cat-card-desc">Vent openers, drip irrigation kits, shelf kits and grow lights to complete your greenhouse setup.</div>
+        <span class="cat-card-link">Shop Accessories <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- =================== FEATURED PRODUCTS =================== -->
+<section class="section section-alt">
+  <div class="section-header">
+    <div class="reveal">
+      <div class="section-eyebrow">Best Sellers</div>
+      <h2 class="section-title">Featured Greenhouse Kits</h2>
+      <p class="section-sub">Free shipping on select models. All products from trusted manufacturer Palram.</p>
+    </div>
+    <a href="#" class="btn-primary reveal" style="white-space:nowrap;flex-shrink:0">View All 35 Products
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+  <div class="products-grid">
+    <a href="#" class="product-card reveal reveal-delay-1">
+      <div class="product-img">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/06/HG5506G_01-400x400.jpg" alt="Hybrid 6x6 Green" onerror="this.parentElement.style.background='#c8e6c9'">
+        <span class="product-series-tag">Hybrid</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Hybrid 6′ × 6′ Green</div>
+        <div class="product-sku">SKU: 763552428530</div>
+        <div class="product-footer">
+          <div class="product-price">$699</div>
+          <button class="add-to-cart" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="product-card reveal reveal-delay-2">
+      <div class="product-img">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/06/HG5608_02-400x400.jpg" alt="Glory 8x8" onerror="this.parentElement.style.background='#c8e6c9'">
+        <span class="product-series-tag">Glory</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Glory 8′ × 8′ Greenhouse</div>
+        <div class="product-sku">SKU: 763552405524</div>
+        <div class="product-footer">
+          <div class="product-price">$2,099</div>
+          <button class="add-to-cart" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="product-card reveal reveal-delay-3">
+      <div class="product-img">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/06/HG5008_02-400x400.jpg" alt="Mythos 6x8 Silver" onerror="this.parentElement.style.background='#c8e6c9'">
+        <span class="product-series-tag">Mythos</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Mythos 6′ × 8′ Hobby Greenhouse</div>
+        <div class="product-sku">SKU: 763552701091</div>
+        <div class="product-footer">
+          <div class="product-price">$649</div>
+          <button class="add-to-cart" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="product-card reveal reveal-delay-4">
+      <div class="product-img">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/06/HG6116G_01-400x400.jpg" alt="Balance 8x16 Green" onerror="this.parentElement.style.background='#c8e6c9'">
+        <span class="product-series-tag">Balance</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Balance 8′ × 16′ Hobby Greenhouse</div>
+        <div class="product-sku">SKU: 763552407276</div>
+        <div class="product-footer">
+          <div class="product-price">$2,299</div>
+          <button class="add-to-cart" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="product-card reveal reveal-delay-5">
+      <div class="product-img">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/06/HG5010_01-400x400.jpg" alt="Mythos 6x10" onerror="this.parentElement.style.background='#c8e6c9'">
+        <span class="product-series-tag">Mythos</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Mythos 6′ × 10′ Hobby Greenhouse</div>
+        <div class="product-sku">SKU: 763552428578</div>
+        <div class="product-footer">
+          <div class="product-price">$749</div>
+          <button class="add-to-cart" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+      </div>
+    </a>
+    <a href="#" class="product-card reveal reveal-delay-1">
+      <div class="product-img">
+        <img src="https://greenhousesetc.com/wp-content/uploads/2017/06/HG5408_01-400x400.jpg" alt="Bella 8x8" onerror="this.parentElement.style.background='#c8e6c9'">
+        <span class="product-series-tag">Bella</span>
+      </div>
+      <div class="product-body">
+        <div class="product-name">Bella 8′ × 8′ Hobby Greenhouse</div>
+        <div class="product-sku">SKU: 763552428103</div>
+        <div class="product-footer">
+          <div class="product-price">$2,249</div>
+          <button class="add-to-cart" aria-label="Add to cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </button>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- =================== ABOUT SPLIT =================== -->
+<div id="about" style="padding: 0 0 96px;">
+  <div class="about-split">
+    <div class="about-left">
+      <div class="about-eyebrow">Our Story</div>
+      <h2 class="about-title">A Family Business Built on Integrity</h2>
+      <p class="about-body">Greenhouses, Etc. and Pool Enclosures, Etc. are small privately owned family companies that excel in providing high quality products and personalized service. We established these businesses with hard work based upon honesty and integrity, and nearly two decades later, it is more important to us than ever.</p>
+      <p class="about-body" style="margin-top:-12px;">We work directly with you, your architect or planner/builder — making sure that every detail is covered from design and construction to full operation of your project, start to finish.</p>
+      <div class="about-features">
+        <div class="about-feature"><span class="feature-dot"></span> Nationwide service</div>
+        <div class="about-feature"><span class="feature-dot"></span> Free shipping available</div>
+        <div class="about-feature"><span class="feature-dot"></span> 7-day technical support</div>
+        <div class="about-feature"><span class="feature-dot"></span> 5-year warranties</div>
+        <div class="about-feature"><span class="feature-dot"></span> BBB Accredited</div>
+        <div class="about-feature"><span class="feature-dot"></span> Custom engineering</div>
+      </div>
+      <a href="#" class="about-btn">Get In Touch</a>
+    </div>
+    <div class="about-right">
+      <div class="about-stat">
+        <div class="about-stat-num">20+</div>
+        <div class="about-stat-label">Years of family-run expertise in greenhouses &amp; enclosures</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">Nationwide</div>
+        <div class="about-stat-label">Service area — we come to you, wherever you are</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">$479+</div>
+        <div class="about-stat-label">Starting price for a complete greenhouse kit, ready to assemble</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">9–5 MST</div>
+        <div class="about-stat-label">Business hours Mon–Fri, plus 7-day technical appointments</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =================== TESTIMONIALS =================== -->
+<section class="section section-alt" id="testimonials">
+  <div class="section-header">
+    <div class="reveal">
+      <div class="section-eyebrow">Customer Stories</div>
+      <h2 class="section-title">Don't Just Take<br>Our Word For It</h2>
+    </div>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <span class="quote-mark">"</span>
+      <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+      <p class="testimonial-text">Our 18 year old atrium was beginning to leak and show signs of wear and age. Greenhouses etc. was recommended by a General Contractor friend who said they had shown experience, quality and reliability. Steve engineered our new Atrium with the latest materials for energy efficiency. To say the work was excellent would be an understatement — and above all… no more leaks. A water tight, elegant and easily maintained atrium ceiling. We were very, very impressed and satisfied.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">JB</div>
+        <div>
+          <div class="author-name">Jim &amp; Barbara Girard</div>
+          <div class="author-loc">Boise, Idaho</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1">
+      <span class="quote-mark">"</span>
+      <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+      <p class="testimonial-text">Steve is a real professional: a professional in experience, adequate equipment, and a most likeable person. We have been through several heavy snow storms and several rains — with no leaks!! I don't think we could have had a better experience. We can recommend him without reservation with full confidence.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">TK</div>
+        <div>
+          <div class="author-name">Tom &amp; June Kerby</div>
+          <div class="author-loc">Salt Lake City, Utah</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <span class="quote-mark">"</span>
+      <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+      <p class="testimonial-text">Yes, the greenhouse looks great! I love it. Thanks for the quick, clean job! On-lookers were impressed, according to the feedback I received.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">RB</div>
+        <div>
+          <div class="author-name">Robin B.</div>
+          <div class="author-loc">Boise, Idaho</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <span class="quote-mark">"</span>
+      <div class="stars"><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span></div>
+      <p class="testimonial-text">The benches are all in and operating. Thanks so much. They are working great and just what I needed. Thanks again.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">KW</div>
+        <div>
+          <div class="author-name">Kathy W.</div>
+          <div class="author-loc">Coeur d'Alene, Idaho</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FINANCING =================== -->
+<div id="financing">
+  <div class="financing-strip">
+    <div class="financing-left reveal">
+      <div class="financing-eyebrow">Crest Capital Partner</div>
+      <h2 class="financing-title">Flexible Financing for Your Business</h2>
+      <p class="financing-body">Due to the current lending climate, financing is available for business-related needs only. Through our partnership with Crest Capital, enjoy 100% financing with terms from 24 to 72 months and quick credit decisions.</p>
+      <div class="financing-features">
+        <div class="fin-feat"><div class="fin-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>100% Equipment Financing</div>
+        <div class="fin-feat"><div class="fin-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>24–72 Month Terms</div>
+        <div class="fin-feat"><div class="fin-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>No Tax Returns Required</div>
+        <div class="fin-feat"><div class="fin-check"><svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Instant Credit Decision</div>
+      </div>
+    </div>
+    <div class="financing-right reveal reveal-delay-2">
+      <div class="crest-partner">Powered by</div>
+      <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--slate);margin-bottom:4px;">Crest Capital</div>
+      <a href="https://www.crestcapital.com/greenhouses" class="btn-slate">
+        Check Loan Calculator
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://www.crestcapital.com/" class="btn-primary" style="margin-top:4px;">Apply Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- =================== CONTACT STRIP =================== -->
+<div class="contact-strip">
+  <div class="contact-strip-left">
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      </div>
+      <div>
+        <div class="contact-detail-label">Call Us Toll-Free</div>
+        <a href="tel:8882448009" class="contact-detail-val">888-244-8009</a>
+      </div>
+    </div>
+    <div class="contact-divider"></div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div>
+        <div class="contact-detail-label">Email Us</div>
+        <a href="mailto:info@greenhousesetc.com" class="contact-detail-val">info@greenhousesetc.com</a>
+      </div>
+    </div>
+    <div class="contact-divider"></div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div>
+        <div class="contact-detail-label">Business Hours</div>
+        <div class="contact-detail-val" style="font-size:14px;">Mon–Fri 9AM–5PM MST</div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="btn-primary">Contact Us</a>
+</div>
+
+<!-- =================== FOOTER =================== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Greenhouses Etc." class="footer-logo" onerror="this.style.display='none'; this.nextSibling.style.display='block'">
+      <div style="display:none;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;margin-bottom:16px;">Greenhouses Etc.</div>
+      <p class="footer-tagline">Small, privately owned family companies excelling in high quality products and personalized service. Honesty and integrity — since 2004.</p>
+      <div class="footer-socials">
+        <a href="https://www.pinterest.com/greenhousesetc/greenhouses-etc-greenhouses/" class="social-btn" target="_blank" title="Pinterest">P</a>
+        <a href="https://www.houzz.com/pro/greenhousebuilder/greenhouses-etc" class="social-btn" target="_blank" title="Houzz">H</a>
+        <a href="https://www.bbb.org/snakeriver/business-reviews/greenhouse-builders/greenhouses-etc-in-caldwell-id-1000013748" class="social-btn" target="_blank" title="BBB">B</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Shop</div>
+      <ul class="footer-links">
+        <li><a href="#">Greenhouses</a></li>
+        <li><a href="#">Conservatories</a></li>
+        <li><a href="#">Pool Enclosures</a></li>
+        <li><a href="#">Sunrooms</a></li>
+        <li><a href="#">Skylights</a></li>
+        <li><a href="#">Accessories</a></li>
+        <li><a href="#">Grow Lights</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Financing</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <ul class="footer-links">
+        <li><a href="#">Policies</a></li>
+        <li><a href="#">Returns &amp; Exchanges</a></li>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Technical Support</a></li>
+        <li><a href="#">My Account</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Greenhouses, Etc. All rights reserved.</div>
+    <ul class="footer-bottom-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Sitemap</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
